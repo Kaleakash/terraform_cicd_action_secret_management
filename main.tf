@@ -8,6 +8,6 @@ variable "secret_value" {
 
 resource "null_resource" "ci10_demo" {
   provisioner "local-exec" {
-    command = "echo 'Simulated deployment with secret: ${var.secret_value}' >> deployment.log"
+    command = "echo 'Simulated deployment with secret: ${var.secret_value}' >> $GITHUB_WORKSPACE/deployment.log"
   }
 }
