@@ -1,0 +1,5 @@
+# Terraform state and local logs
+*.tfstate
+*.tfstate.backup
+.terraform/
+deployment.log
