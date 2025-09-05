@@ -1,7 +1,9 @@
 # main.tf
 
+# Provider (null provider for simulation)
 provider "null" {}
 
+# Sensitive variable
 variable "secret_value" {
   description = "A sensitive value from CI/CD"
   default     = "super-secret-value"
