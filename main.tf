@@ -1,6 +1,6 @@
 # main.tf
 
-# Provider (null provider used to simulate deployment)
+# Use null provider to simulate deployment
 provider "null" {}
 
 # Sensitive variable
@@ -13,7 +13,7 @@ variable "secret_value" {
 # Null resource to simulate deployment
 resource "null_resource" "ci10_demo" {
   provisioner "local-exec" {
-    # Write the secret to deployment.log in current working directory
-    command = "echo 'Simulated deployment with secret: ${var.secret_value}' >> ./deployment.log"
+    # Write secret to deployment.log in current working directory
+    command = "echo 'Simulated deployment with secret: ${var.secret_value}' >> $PWD/deployment.log"
   }
 }
